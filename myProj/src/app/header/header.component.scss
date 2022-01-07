@@ -1,0 +1,40 @@
+@import 'src/assets/mixins.scss';
+@import 'src/styles.scss';
+
+.header-div {
+    margin-top: 0.75em;
+    margin-right: 30px;
+}
+.logoStyle {
+    width: 7em;
+    height: 4.5em;
+}
+.alignRight {
+    text-align: right;
+    margin-top: 5px;
+}
+.buttonStyle {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    font-size: 1.4em;
+    color: cornflowerblue !important;
+    background-color: white !important;
+}
+.line {
+    border-bottom: 1px solid lightgray;
+}
+.user-dot {
+    width: 0.5em;
+    height: 0.5em;
+    position: relative;
+    background-color: red;
+    margin: -50% 88%;
+    border-radius: 50%;
+}
+
+@include deep {
+    .p-sidebar .p-sidebar-header .p-sidebar-icon {
+        right: 90%;
+    }
+}

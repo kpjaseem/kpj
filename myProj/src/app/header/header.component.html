@@ -1,0 +1,14 @@
+<div class="grid grid-nogutter header-div">
+  <div class="col-11">
+    <a style="cursor: pointer;"><img src="assets/logo-cma.png" alt="No img found" class="logoStyle"></a>
+  </div>
+  <div class="col-1 alignRight">
+    <button pButton type="button" label="KP" class="buttonStyle" (click)="isSidebarOpen = true">
+    </button>
+    <div class="user-dot"></div>
+  </div>
+</div>
+<div class="line mt-2"></div>
+
+<p-sidebar [(visible)]="isSidebarOpen" position="right" [style]="{width:'30%'}" [transitionOptions]="'300ms'">
+</p-sidebar>
