@@ -13,28 +13,43 @@ export class HeaderComponent implements OnInit {
   isPgOpen = false;
   isUserPreferenceOpen = false;
   isLogOutOpen = false;
+  assignedPgs!: string[];
+  selectedCarrier: any;
+  carrierOptions = [{}];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.assignedPgs = ['MRS ASIA TO CARRIB', 'MRS ASIA TO NEUR'];
+    this.carrierOptions = [
+      { code: 'CMA CGM', carrier: 'cma' },
+      { code: 'ANL', carrier: 'anl' },
+      { code: 'CNC', carrier: 'cnc' },
+    ];
+    this.selectedCarrier = { code: 'CMA CGM', carrier: 'cma' }
   }
 
   toggleSidebar(val: boolean) {
     this.isSidebarOpen = val;
   }
 
-  toggleChevron(val: boolean[]) {
-    if (val[0]) {
-      this.isUserInfoOpen = !this.isUserInfoOpen;
-    } else if (val[1]) {
-      this.isCarrierSelectionOpen = !this.isCarrierSelectionOpen;
-    } else if (val[2]) {
-      this.isPgOpen = !this.isPgOpen;
-    } else if (val[3]) {
-      this.isUserPreferenceOpen = !this.isUserPreferenceOpen;
-    } else {
-      this.isLogOutOpen = !this.isLogOutOpen;
+  toggleChevron(val: string) {
+    switch (val) {
+      case 'userInfo':
+        this.isUserInfoOpen = !this.isUserInfoOpen;
+        break;
+      case 'carrierSelection':
+        this.isCarrierSelectionOpen = !this.isCarrierSelectionOpen;
+        break;
+      case 'pg':
+        this.isPgOpen = !this.isPgOpen;
+        break;
+      case 'preference':
+        this.isUserPreferenceOpen = !this.isUserPreferenceOpen;
+        break;
+      default:
+        this.isLogOutOpen = !this.isLogOutOpen;
+        break;
     }
   }
-
 }

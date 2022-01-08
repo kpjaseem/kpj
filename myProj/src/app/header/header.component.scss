@@ -47,16 +47,15 @@
 .name {
     font-size: 2em;
     color: var(--white);
-    font-family: Roboto, sans-serif;
 }
 .userInfo {
-    font-family: Roboto, sans-serif;
     font-size: 17px;
     padding: 1em;
     cursor: pointer;
 }
 .paddingOne {
     padding: 1em;
+    cursor: pointer;
 }
 .closeIcon:hover {
     cursor: pointer;
@@ -65,8 +64,16 @@
 .flexDisplay {
     display: flex;
 }
-.changeColor {
+.changeColorOnChevronDown {
     background-color: var(--blueLite3);
+}
+.autoMargin {
+    margin-left: auto;
+}
+.imageStyle {
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
 }
 
 @include deep {
@@ -78,5 +85,8 @@
     }    
     .p-sidebar .p-sidebar-content {
         padding: 0;
+    }
+    .p-dropdown {
+        width: 100%;
     }
 }

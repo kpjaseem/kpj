@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CheckboxModule} from 'primeng/checkbox';
 import {SidebarModule} from 'primeng/sidebar';
 import {ButtonModule} from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
     CheckboxModule,
     SidebarModule,
-    ButtonModule
+    ButtonModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
