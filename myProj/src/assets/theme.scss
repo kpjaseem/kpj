@@ -1,0 +1,156 @@
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeflex/src/_variables.scss';
+@import '~primeflex/src/_grid.scss';
+@import '~primeflex/src/_formlayout.scss';
+@import '~primeflex/src/_display.scss';
+@import '~primeflex/src/_text.scss';
+@import '~primeflex/src/_spacing.scss';
+@import '~primeflex/src/_elevation.scss';
+@import '~primeicons/primeicons.css';
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../fonts/google-fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-regular';
+    src: url(../fonts/google-fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Antonio-regular';
+    src: url(../fonts/google-fonts/Antonio-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Antonio';
+    src: url(../fonts/google-fonts/Antonio-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Antonio-bold';
+    src: url(../fonts/google-fonts/Antonio-Bold.ttf) format('truetype');
+}
+
+
+::-webkit-input-placeholder {
+    font-family: Roboto-regular, sans-serif;
+    color: var(--blue2);
+    font-style: italic;
+}
+
+:-ms-input-placeholder {
+    font-family: Roboto-regular, sans-serif;
+    color: var(--blue2);
+    font-style: italic;
+}
+
+::placeholder {
+    font-family: Roboto-regular, sans-serif;
+    color: var(--blue2);
+    font-style: italic;
+}
+
+.p-radiobutton .p-radiobutton-box.p-highlight {
+    border-color: #04246a;
+    background: transparent;
+}
+
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+    width: 12px;
+    height: 12px;
+    transition-duration: 0.2s;
+    background-color: #04246a;
+}
+
+.p-toast .p-toast-message.p-toast-message-info {
+    background: #0173e2;
+    border: none;
+    color: #ffff;
+    font-size: 16px;
+}
+
+.p-toast .p-toast-message.p-toast-message-success {
+    background: var(--green1);
+    border: none;
+    color: #ffff;
+    font-size: 16px;
+}
+
+.content-toast {
+    background: #ffffff;
+    margin: 0rem -0.5rem;
+}
+
+.p-toast .p-toast-message .p-toast-message-content {
+    padding: 12px 8px 2px;
+}
+
+.p-toast .p-toast-message .p-toast-icon-close:hover {
+    background: transparent;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-icon-close {
+    position: relative;
+    top: -5px;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon {
+    color: #ffff;
+    border: 2px solid #ffff;
+    border-radius: 25px;
+    height: 24px;
+    width: 24px;
+    font-size: 13px;
+    font-weight: bolder;
+    padding: 4px 3px 2px 3px;
+}
+
+.p-toast .p-toast-message {
+    margin-bottom: 6em;
+    margin-left: -5em;
+    margin-right: 5em;
+}
+
+.p-toast .p-toast-message.p-toast-message-info ,.p-toast-message-icon {
+    color: #ffff;
+    height: 28px;
+    width: 28px;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.p-toast {
+    .p-toast-message .pi-times {
+        color: #ffff;
+    }
+    .p-toas-summary {
+        position: relative;
+        top: 3px;
+    }
+}
+
+.p-toast .p-toast-message {
+    .p-toast-message-content {
+        padding: 0.5rem 0.5rem 0 0.5rem;
+        border-width: 0 0 0 6px;
+    }
+    button.p-toast-close-icon {
+        position: relative;
+        top: -2px;
+    }
+    .p-toast-summary {
+        font-weight: 500 !important;
+        font-family: 'Roboto-regular';
+    }
+}
+
+.p-sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+}
+

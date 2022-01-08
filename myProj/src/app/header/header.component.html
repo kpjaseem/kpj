@@ -1,14 +1,104 @@
 <div class="grid grid-nogutter header-div">
-  <div class="col-11">
-    <a style="cursor: pointer;"><img src="assets/logo-cma.png" alt="No img found" class="logoStyle"></a>
-  </div>
-  <div class="col-1 alignRight">
-    <button pButton type="button" label="KP" class="buttonStyle" (click)="isSidebarOpen = true">
-    </button>
-    <div class="user-dot"></div>
-  </div>
+    <div class="col-11">
+        <a href="https://github.com/kpjaseem/" target="_blank" style="cursor: pointer;"><img src="assets/logo-cma.png"
+                alt="No img found" class="logoStyle"></a>
+    </div>
+    <div class="col-1 alignRight">
+        <button pButton type="button" label="KP" class="buttonStyle" (click)="toggleSidebar(true)">
+        </button>
+        <!-- <div class="user-dot"></div> -->
+    </div>
 </div>
 <div class="line mt-2"></div>
 
-<p-sidebar [(visible)]="isSidebarOpen" position="right" [style]="{width:'30%'}" [transitionOptions]="'300ms'">
+<p-sidebar [(visible)]="isSidebarOpen" position="right" [style]="{width:'30%'}" [transitionOptions]="'300ms'"
+    [showCloseIcon]="false">
+    <div class="grid sidebarWidth">
+        <div class="col-12 flexDisplay">
+            <div class="col-10 marginAuto">
+                <em class="pi pi-times closeIcon" (click)="toggleSidebar(false)"></em>
+            </div>
+            <div class="col-2">
+                <button pButton type="button" label="KP" class="buttonStyle">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="grid sidebarWidth">
+        <div class="col-12 namePlate">
+            <div class="mt-4 ml-3 name">Jaseem KP</div>
+        </div>
+    </div>
+    <div class="sidebarWidth">
+        <div [ngClass]="isUserInfoOpen ? 'changeColor' : ''">
+            <div class="col-12 flexDisplay" (click)="toggleChevron([true,false,false,false,false])">
+                <div class="col-10 flexDisplay">
+                    <img src="assets/user-info.jpg" alt="image not found" style="width: 3em;height: 3em;">
+                    <div class="userInfo">My user info</div>
+                </div>
+                <div class="col-2">
+                    <em class="paddingOne" [ngClass]="isUserInfoOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></em>
+                </div>
+            </div>
+            <div *ngIf="isUserInfoOpen" class="col-12 mt-2 paddingOne">
+                Hello
+            </div>
+        </div>
+        <div [ngClass]="isCarrierSelectionOpen ? 'changeColor' : ''">
+            <div class="col-12 flexDisplay" (click)="toggleChevron([false,true,false,false,false])">
+                <div class="col-10 flexDisplay">
+                    <img src="assets/carrier.jpg" alt="image not found" style="width: 3em;height: 3em;">
+                    <div class="userInfo">Carrier selection</div>
+                </div>
+                <div class="col-2">
+                    <em class="paddingOne" [ngClass]="isCarrierSelectionOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></em>
+                </div>
+            </div>
+            <div *ngIf="isCarrierSelectionOpen" class="col-12 mt-2 paddingOne">
+                Hello
+            </div>
+        </div>
+        <div [ngClass]="isPgOpen ? 'changeColor' : ''">
+            <div class="col-12 flexDisplay" (click)="toggleChevron([false,false,true,false,false])">
+                <div class="col-10 flexDisplay">
+                    <img src="assets/pg.jpg" alt="image not found" style="width: 3em;height: 3em;">
+                    <div class="userInfo">PG Admin</div>
+                </div>
+                <div class="col-2">
+                    <em class="paddingOne" [ngClass]="isPgOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></em>
+                </div>
+            </div>
+            <div *ngIf="isPgOpen" class="col-12 mt-2 paddingOne">
+                Hello
+            </div>
+        </div>
+        <div [ngClass]="isUserPreferenceOpen ? 'changeColor' : ''">
+            <div class="col-12 flexDisplay" (click)="toggleChevron([false,false,false,true,false])">
+                <div class="col-10 flexDisplay">
+                    <img src="assets/preference.jpg" alt="image not found" style="width: 3em;height: 3em;">
+                    <div class="userInfo">User preferences</div>
+                </div>
+                <div class="col-2">
+                    <em class="paddingOne" [ngClass]="isUserPreferenceOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></em>
+                </div>
+            </div>
+            <div *ngIf="isUserPreferenceOpen" class="col-12 mt-2 paddingOne">
+                Hello
+            </div>
+        </div>
+        <div [ngClass]="isLogOutOpen ? 'changeColor' : ''">
+            <div class="col-12 flexDisplay" (click)="toggleChevron([false,false,false,false,true])">
+                <div class="col-10 flexDisplay">
+                    <img src="assets/logOut.jpg" alt="image not found" style="width: 3em;height: 3em;">
+                    <div class="userInfo">Log Out</div>
+                </div>
+                <div class="col-2">
+                    <em class="paddingOne" [ngClass]="isLogOutOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></em>
+                </div>
+            </div>
+            <div *ngIf="isLogOutOpen" class="col-12 mt-2 paddingOne">
+                Hello
+            </div>
+        </div>
+    </div>
 </p-sidebar>

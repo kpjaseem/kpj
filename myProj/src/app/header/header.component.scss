@@ -6,7 +6,7 @@
     margin-right: 30px;
 }
 .logoStyle {
-    width: 7em;
+    width: 9em;
     height: 4.5em;
 }
 .alignRight {
@@ -32,9 +32,51 @@
     margin: -50% 88%;
     border-radius: 50%;
 }
+.sidebarWidth {
+    margin: 0.5rem 0;
+}
+.marginAuto {
+    margin: auto;
+}
+.namePlate {
+    height: 6em;
+    background-color: darkblue;
+    border-top: 1px solid darkblue;
+    border-bottom: 1px solid darkblue;
+}
+.name {
+    font-size: 2em;
+    color: var(--white);
+    font-family: Roboto, sans-serif;
+}
+.userInfo {
+    font-family: Roboto, sans-serif;
+    font-size: 17px;
+    padding: 1em;
+    cursor: pointer;
+}
+.paddingOne {
+    padding: 1em;
+}
+.closeIcon:hover {
+    cursor: pointer;
+    background-color: var(--amber);
+}
+.flexDisplay {
+    display: flex;
+}
+.changeColor {
+    background-color: var(--blueLite3);
+}
 
 @include deep {
-    .p-sidebar .p-sidebar-header .p-sidebar-icon {
-        right: 90%;
+    .p-sidebar .p-sidebar-header {
+        padding: 0;
+        .p-sidebar-icon {
+            right: 90%;
+        }
+    }    
+    .p-sidebar .p-sidebar-content {
+        padding: 0;
     }
 }
