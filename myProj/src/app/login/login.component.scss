@@ -1,0 +1,21 @@
+@import 'src/assets/mixins.scss';
+@import 'src/styles.scss';
+
+.loginClass {
+    width: max-content;
+    height: inherit;
+    padding: 2em;
+    background: var(--blue1);
+}
+.line {
+    border: 1px solid lightgrey;
+}
+
+@include deep {
+    .p-inputtext {
+        border-radius: 0;
+    }
+    .p-button {
+        width: 100%;
+    }
+}

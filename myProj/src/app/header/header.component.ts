@@ -10,9 +10,7 @@ export class HeaderComponent implements OnInit {
   isSidebarOpen = false;
   isUserInfoOpen = false;
   isCarrierSelectionOpen = false;
-  isPgOpen = false;
   isUserPreferenceOpen = false;
-  isLogOutOpen = false;
   assignedPgs!: string[];
   selectedCarrier: any;
   carrierOptions = [{}];
@@ -22,11 +20,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.assignedPgs = ['MRS ASIA TO CARRIB', 'MRS ASIA TO NEUR'];
     this.carrierOptions = [
-      { code: 'CMA CGM', carrier: 'cma' },
-      { code: 'ANL', carrier: 'anl' },
-      { code: 'CNC', carrier: 'cnc' },
+      { code: 'CMA CGM', carrier: 'cma', link: 'https://www.cma-cgm.com/' },
+      { code: 'ANL', carrier: 'anl', link: 'https://www.anl.com.au/' },
+      { code: 'CNC', carrier: 'cnc', link: 'https://www.cnc-ebusiness.com/' },
     ];
-    this.selectedCarrier = { code: 'CMA CGM', carrier: 'cma' }
+    this.selectedCarrier = { code: 'CMA CGM', carrier: 'cma', link: 'https://www.cma-cgm.com/' }
   }
 
   toggleSidebar(val: boolean) {
@@ -41,14 +39,8 @@ export class HeaderComponent implements OnInit {
       case 'carrierSelection':
         this.isCarrierSelectionOpen = !this.isCarrierSelectionOpen;
         break;
-      case 'pg':
-        this.isPgOpen = !this.isPgOpen;
-        break;
       case 'preference':
         this.isUserPreferenceOpen = !this.isUserPreferenceOpen;
-        break;
-      default:
-        this.isLogOutOpen = !this.isLogOutOpen;
         break;
     }
   }

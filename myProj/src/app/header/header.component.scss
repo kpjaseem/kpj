@@ -22,7 +22,7 @@
     background-color: white !important;
 }
 .line {
-    border-bottom: 1px solid lightgray;
+    border: 1px solid lightgray;
 }
 .user-dot {
     width: 0.5em;
@@ -65,7 +65,7 @@
     display: flex;
 }
 .changeColorOnChevronDown {
-    background-color: var(--blueLite3);
+    background-color: var(--blue12);
 }
 .autoMargin {
     margin-left: auto;

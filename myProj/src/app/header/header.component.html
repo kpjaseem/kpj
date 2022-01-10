@@ -1,6 +1,6 @@
 <div class="grid grid-nogutter header-div">
     <div class="col-11">
-        <a href="https://github.com/kpjaseem/" target="_blank" style="cursor: pointer;"><img src='assets/images/logo-{{selectedCarrier.carrier}}.png'
+        <a href={{selectedCarrier.link}} target="_blank" style="cursor: pointer;"><img src='assets/images/logo-{{selectedCarrier.carrier}}.png'
                 alt="No img found" class="logoStyle"></a>
     </div>
     <div class="col-1 alignRight">
@@ -9,7 +9,7 @@
         <!-- <div class="user-dot"></div> -->
     </div>
 </div>
-<div class="line mt-2"></div>
+<div class="line mt-2 mx-2"></div>
 
 <p-sidebar [(visible)]="isSidebarOpen" position="right" [style]="{width:'30%'}" [transitionOptions]="'300ms'"
     [showCloseIcon]="false">
@@ -42,6 +42,7 @@
             </div>
             <div *ngIf="isUserInfoOpen" class="col-12 mt-2 paddingOne">
                 <div>Role : PRICER MANAGER</div>
+                <div class="line mt-2"></div>
                 <div class="mt-2">Assigned PGs: </div>
                 <div class="col-offset-3 mt-2" *ngFor="let item of assignedPgs">
                     - {{item}}
@@ -63,18 +64,12 @@
                 <p-dropdown [options]="carrierOptions" [(ngModel)]="selectedCarrier" optionLabel="code"></p-dropdown>
             </div>
         </div>
-        <div [ngClass]="isPgOpen ? 'changeColorOnChevronDown' : ''">
-            <div class="col-12 flexDisplay" (click)="toggleChevron('pg')">
+        <div>
+            <div class="col-12 flexDisplay">
                 <div class="flexDisplay">
                     <img src="assets/images/pg.jpg" alt="image not found" class="imageStyle">
                     <div class="userInfo">PG Admin</div>
                 </div>
-                <div class="autoMargin">
-                    <em class="paddingOne" [ngClass]="isPgOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></em>
-                </div>
-            </div>
-            <div *ngIf="isPgOpen" class="col-12 mt-2 paddingOne">
-                Hello
             </div>
         </div>
         <div [ngClass]="isUserPreferenceOpen ? 'changeColorOnChevronDown' : ''">
@@ -92,18 +87,12 @@
                 Hello
             </div>
         </div>
-        <div [ngClass]="isLogOutOpen ? 'changeColorOnChevronDown' : ''">
-            <div class="col-12 flexDisplay" (click)="toggleChevron('')">
+        <div>
+            <div class="col-12 flexDisplay">
                 <div class="flexDisplay">
                     <img src="assets/images/logOut.jpg" alt="image not found" class="imageStyle">
                     <div class="userInfo">Log Out</div>
                 </div>
-                <div class="autoMargin">
-                    <em class="paddingOne" [ngClass]="isLogOutOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></em>
-                </div>
-            </div>
-            <div *ngIf="isLogOutOpen" class="col-12 mt-2 paddingOne">
-                Hello
             </div>
         </div>
     </div>

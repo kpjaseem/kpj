@@ -1,0 +1,25 @@
+<div class="col-offset-5 mt-8" style="height: 23em;">
+    <div class="loginClass">
+        <form (ngSubmit)="onSubmit()" #form="ngForm">
+            <div class="ml-4">
+                <img src="assets/images/logo-cma.png" alt="Image not found" style="width: 9em;height: 4.5em;">
+            </div>
+            <div class="line"></div>
+            <div class="mt-6">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText [(ngModel)]="userName" [ngModelOptions]="{standalone: true}">
+                    <label for="float-input">Username</label>
+                </span>
+            </div>
+            <div class="mt-4">
+                <span class="p-float-label">
+                    <input id="float-input" type="password" pInputText [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                    <label for="float-input">Password</label>
+                </span>
+            </div>
+            <div class="mt-4">
+                <button pButton label="SIGN IN" type="submit"></button>
+            </div>
+        </form>
+    </div>
+</div>

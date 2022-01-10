@@ -1,0 +1,9 @@
+@import 'src/assets/mixins.scss';
+@import 'src/styles.scss';
+
+.line {
+    border-bottom: 1px solid lightgrey;
+}
+.paddingTwo {
+    padding: 2rem;
+}
