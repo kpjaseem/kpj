@@ -4,6 +4,78 @@
 .line {
     border-bottom: 1px solid lightgrey;
 }
+.line1 {
+    border-bottom: 1px solid #1769aa;
+}
 .paddingTwo {
     padding: 2rem;
+}
+.svgSize {
+    font-size: 1.4em;
+}
+.flexDisplay {
+    display: flex;
+}
+.greyBackground {
+    background: #EEEEEE;
+    padding: 4em 2em 2em;
+}
+.cardsBody {
+    background: var(--white);
+}
+.heading {
+    padding: 1rem;
+    font-stretch: condensed;
+    color: var(--blue6);
+}
+.cardBody {
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.15em;
+    color: var(--blue11);
+}
+.subHead {
+    padding: 0.2rem 0.5rem;
+    width: auto;
+    height: 2rem;
+}
+.shadow:hover {
+    padding: 0.2rem 0.5rem;
+    background: #BDBDBD;
+    width: auto;
+    height: 2rem;
+    text-align: center;
+    border-radius: 2em;
+}
+
+@include deep {
+    .p-toast .p-toast-message.p-toast-message-info, .p-toast .p-toast-message.p-toast-message-error {
+        background: #0173e2;
+        border: #0173e2;
+        .p-toast-message-icon {
+            color: var(--white);
+            font-size: 2rem;
+        }
+        .p-toast-icon-close {
+            color: var(--white);
+        }
+    }
+    .p-toast .p-toast-message.p-toast-message-error {
+        background: var(--red);
+    }
+    .p-toast .p-toast-message .p-toast-message-content {
+        padding: 0.5rem;
+        .p-toast-message-text {
+            margin: 0.3rem 0 0 1rem;
+        }
+        .p-toast-summary {
+            color: var(--white);
+            font-size: 1.1em;
+        }
+    }
+    .p-toast.p-toast-bottom-right {
+        bottom: 5em;
+        right: 10em;
+        width: 30rem;
+    }
 }
