@@ -7,11 +7,14 @@
 .line1 {
     border-bottom: 1px solid #1769aa;
 }
+.headerStyle {
+    padding: 2rem 2rem 1rem;
+}
 .paddingTwo {
     padding: 2rem;
 }
 .svgSize {
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 .flexDisplay {
     display: flex;
@@ -35,6 +38,7 @@
     color: var(--blue11);
 }
 .subHead {
+    cursor: pointer;
     padding: 0.2rem 0.5rem;
     width: auto;
     height: 2rem;

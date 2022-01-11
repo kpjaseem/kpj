@@ -1,0 +1,6 @@
+<div class="breadcrumb-div" *ngIf="!hidePriceListDetailsContent && breadcrumbs &&
+(breadcrumbs.length !== 1 || (breadcrumbs.length === 1 && breadcrumbs[0] && breadcrumbs[0].label !==  'AQUA Home'))">
+    <p-breadcrumb class="breadCrumb" [model]="breadcrumbs">  
+    </p-breadcrumb>
+    <div class="mt-3 line"></div>
+</div>

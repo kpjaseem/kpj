@@ -1,6 +1,6 @@
 // /* You can add global styles to this file, and also import other style files */
 // @import 'src/assets/theme.scss';
-// @import 'src/assets/mixins.scss';
+@import 'src/assets/mixins.scss';
 
 :root {
     --red: #e20101;
@@ -92,6 +92,12 @@ body {
 .label-header-main {
     color: var(--blue1);
     font-size: 20px;
+    font-family: Roboto-regular, sans-serif;
+}
+
+.label-subheader-main {
+    color: var(--blue1);
+    font-size: 16px;
     font-family: Roboto-regular, sans-serif;
 }
 

@@ -1,0 +1,91 @@
+@import 'src/assets/mixins.scss';
+@import 'src/styles.scss';
+
+.paddingTwo {
+    padding: 2rem 3rem 1rem;
+}
+.pgClass {
+    background: #EEEEEE;
+    padding: 1em 2.7em;
+}
+.dashboardLink {
+    line-height: 3.3;
+    color: var(--blue7);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.dot {
+    background: var(--blue12);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    position: relative;
+    top: 1.5em;
+}
+.line {
+    border-bottom: 1px solid black;
+}
+.container {
+    background: var(--white);
+    padding: 3em 2em;
+    display: flex;
+}
+.history {
+    color: var(--blue7);
+    text-align: end;
+    font-weight: normal;
+    cursor: pointer;
+}
+.loading, .discharging {
+    padding: 1em;
+    color: var(--blue1);
+    font-weight: bold;
+}
+.rectangleArray {
+    font-weight: normal;
+}
+
+@include deep {
+    .p-inputtext {
+        width: 100%;
+        border-radius: 0;
+        border: 1px solid var(--blue4);
+    }
+    .p-tabview {
+        .p-tabview-panels {
+            display: none;
+        }
+        .p-tabview-nav {
+            background: #EEEEEE;
+            border: none;
+            li {
+                width: 10em;
+                height: 5em;
+                margin-right: 1em;
+                .p-tabview-nav-link {
+                    color: var(--blue1);
+                }
+                .p-tabview-nav-link:not(.p-disabled):focus {
+                    box-shadow: none;
+                }
+            }
+            li.p-highlight .p-tabview-nav-link {
+                color: var(--blue1);
+                border-color: var(--red);
+            }
+            li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+                color: var(--blue1);
+                border-color: var(--white);
+                border: none;
+                height: 4.85em;
+            }
+            .p-tabview-nav-link {
+                height: 5em;
+                .p-tabview-title {
+                    padding: 1rem 0.5rem 1rem 1.2rem;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}

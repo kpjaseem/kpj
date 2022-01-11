@@ -10,11 +10,13 @@ import { PrimeNGConfig } from 'primeng/api';
 export class AppComponent implements OnInit {
   title = 'myProj';
   isCredentials = false;
+  isHomePageOpen!: boolean;
 
   constructor(private primengConfig: PrimeNGConfig,
               private repo: RepoService) {}
 
   ngOnInit() {
+    this.repo.isHomePageOpen.subscribe(val => this.isHomePageOpen = val);
     this.primengConfig.ripple = false;
     this.isCredentials = this.repo?.isCredentials;
   }

@@ -1,0 +1,38 @@
+@import 'src/assets/mixins.scss';
+@import 'src/styles.scss';
+
+@include deep {
+    .breadCrumb .p-breadcrumb {
+        border: solid 1px white;
+    }
+    .breadCrumb .p-breadcrumb ul li:not(:last-child)  .p-menuitem-link .p-menuitem-text {
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+        color: #006fe4;
+    }
+    .breadCrumb .p-breadcrumb ul li:not(:last-child).p-breadcrumb-chevron {
+        font-size: 14px;
+        color: #006fe4;
+    }
+    .breadCrumb .p-breadcrumb ul li:last-child .p-menuitem-link .p-menuitem-text {
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+        color: var(--blue1);
+    }
+    .breadCrumb .p-breadcrumb ul li:nth-last-child(2).p-breadcrumb-chevron {
+        font-size: 14px;
+        color: var(--blue1);
+    }
+}
+.breadcrumb-div {
+    border-bottom: solid 1px white;
+    margin:  0 3rem;
+}
+.line {
+    border-bottom: 1px solid lightgrey;
+}
+@media screen and (max-width: 450px) {
+    .breadcrumb-div {
+        margin-left: 10px;
+    }
+}

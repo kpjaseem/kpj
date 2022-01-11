@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.assignedPgs = ['MRS ASIA TO CARRIB', 'MRS ASIA TO NEUR'];
+    this.assignedPgs = ['ACSA (UPA)TEST', 'BALTIC EXPORT HO (UPA)TEST','MRS ASIA TO CARIB/MANAUS-ALL', 'MRS-NEUR TO ASIA-ALL'];
     this.carrierOptions = [
       { code: 'CMA CGM', carrier: 'cma', link: 'https://www.cma-cgm.com/' },
       { code: 'ANL', carrier: 'anl', link: 'https://www.anl.com.au/' },

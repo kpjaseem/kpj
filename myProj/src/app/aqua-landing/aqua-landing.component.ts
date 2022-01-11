@@ -1,4 +1,6 @@
+import { RepoService } from './../repo.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -10,7 +12,9 @@ export class AquaLandingComponent implements OnInit {
 
   favoriteList: any;
 
-  constructor(private toast: MessageService) { }
+  constructor(private toast: MessageService,
+              private route: Router,
+              private repo: RepoService) { }
 
   ngOnInit(): void {
     this.favoriteList = [
@@ -32,7 +36,11 @@ export class AquaLandingComponent implements OnInit {
   UnAuthorizedToast() {
     this.toast.clear('onProgress');
     this.toast.add({key: 'onProgress', severity: 'error', summary: 'Not Authorized', sticky: true});
+  }
 
+  openPgAdmin() {
+    this.repo.isHomePageOpen.next(false);
+    this.route.navigateByUrl('home/pgAdmin');
   }
 
 }
