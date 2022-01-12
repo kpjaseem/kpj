@@ -6,46 +6,48 @@
 <div class="pgClass">
     <div class="label-subheader-main">PG selection</div>
     <div class="grid">
-        <div class="col-3"><p-dropdown [options]="assignedPgs" [(ngModel)]="selectedPg"></p-dropdown></div>
+        <div class="col-3">
+            <p-dropdown [options]="assignedPgs" [(ngModel)]="selectedPg" optionLabel="name" (onClick)="getGopArray(selectedPg.pgId)"></p-dropdown>
+        </div>
         <div class="ml-4"></div>
         <div class="dot"></div>
         <div class="ml-4"></div>
         <div class="dashboardLink">Go to Price list dashboard</div>
     </div>
-    <div class="mt-4"> 
-        <p-tabView>
+    <div class="mt-4">
+        <p-tabView (onChange)="changeTab($event)">
             <p-tabPanel header="Group of ports / TAD"></p-tabPanel>
             <p-tabPanel header="PG infos"></p-tabPanel>
             <p-tabPanel header="Commodities"></p-tabPanel>
         </p-tabView>
         <div class="line mt-2"></div>
     </div>
-    <div class="mt-2 container">
-        <div class="loading col">
-            <div class="grid">
-                <div class="col-10">LOADING GOP / TAD</div>
-                <div class="col-2 history">History <em class="pi pi-book"></em></div>
-            </div>
-            <div class="grid mt-2 rectangleArray">
-                <div class="col-6">
-                    <input type="text" pInputText>
+    <div class="mt-2">
+        <div class="container" *ngIf="isTabOpen[0]">
+            <div class="loading col">
+                <div class="grid">
+                    <div class="col-10">LOADING GOP / TAD</div>
+                    <div class="col-2 history">History <em class="pi pi-book"></em></div>
                 </div>
-                <div class="col-6">
-                    <input type="text" pInputText>
+                <div class="grid mt-2 rectangleArray" *ngIf="loadingGopArray?.length" [ngClass]="loadingGopArray.length > 10 ? 'heightAndOverflow':''">
+                    <div class="col-6" style="display: flex;" *ngFor="let item of loadingGopArray">
+                        <input class="first" type="text" pInputText [value]="item.groupOfPortName">
+                        <div class="icons" style="border-right: none;"><em class="pi pi-eye"></em></div>
+                        <div class="icons"><em class="pi pi-pencil"></em></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="discharging col">
-            <div class="grid">
-                <div class="col-10">DISCHARGE GOP / TAD</div>
-                <div class="col-2 history">History <em class="pi pi-book"></em></div>
-            </div>
-            <div class="grid mt-2 rectangleArray">
-                <div class="col-6">
-                    <input type="text" pInputText>
+            <div class="discharging col">
+                <div class="grid">
+                    <div class="col-10">DISCHARGE GOP / TAD</div>
+                    <div class="col-2 history">History <em class="pi pi-book"></em></div>
                 </div>
-                <div class="col-6">
-                    <input type="text" pInputText>
+                <div class="grid mt-2 rectangleArray" *ngIf="dischargeGopArray?.length" [ngClass]="dischargeGopArray.length > 10 ? 'heightAndOverflow':''">
+                    <div class="col-6" style="display: flex;" *ngFor="let item of dischargeGopArray">
+                        <input class="first" type="text" pInputText [value]="item.groupOfPortName">
+                        <div class="icons" style="border-right: none;"><em class="pi pi-eye"></em></div>
+                        <div class="icons"><em class="pi pi-pencil"></em></div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,90 +2,149 @@
 @import 'src/styles.scss';
 
 .paddingTwo {
-    padding: 2rem 3rem 1rem;
+  padding: 2rem 3rem 1rem;
 }
+
 .pgClass {
-    background: #EEEEEE;
-    padding: 1em 2.7em;
+  background: #EEEEEE;
+  padding: 1em 2.7em;
 }
+
 .dashboardLink {
-    line-height: 3.3;
-    color: var(--blue7);
-    text-decoration: underline;
-    cursor: pointer;
+  line-height: 3.3;
+  color: var(--blue7);
+  text-decoration: underline;
+  cursor: pointer;
 }
+
 .dot {
-    background: var(--blue12);
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    position: relative;
-    top: 1.5em;
+  background: var(--blue12);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  position: relative;
+  top: 1.5em;
 }
+
 .line {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
+
 .container {
-    background: var(--white);
-    padding: 3em 2em;
-    display: flex;
+  background: var(--white);
+  padding: 3em 2em;
+  display: flex;
+  .heightAndOverflow {
+    height: 17em;
+    overflow-y: scroll;
+  }
 }
+
 .history {
-    color: var(--blue7);
-    text-align: end;
-    font-weight: normal;
-    cursor: pointer;
+  color: var(--blue7);
+  text-align: end;
+  font-weight: normal;
+  cursor: pointer;
 }
-.loading, .discharging {
-    padding: 1em;
-    color: var(--blue1);
-    font-weight: bold;
+
+.loading,
+.discharging {
+  padding: 1em;
+  color: var(--blue1);
+  font-weight: bold;
 }
+
 .rectangleArray {
-    font-weight: normal;
+  font-weight: normal;
+}
+
+.zeroMarginTop {
+  margin-top: 0;
+}
+.first {
+    border: 1px solid var(--blue1);
+    border-right: none;
+}
+.icons {
+    border: 1px solid var(--blue1);
+    border-left: none;
+    display: flex;
+    justify-content: center;
+    width: 12.6%;
+    padding: 0.6em;
 }
 
 @include deep {
-    .p-inputtext {
-        width: 100%;
-        border-radius: 0;
-        border: 1px solid var(--blue4);
+  .p-inputtext {
+    width: 80%;
+    border-radius: 0;
+    border: 1px solid var(--blue4);
+  }
+  .p-inputtext:enabled:hover {
+    border-color: var(--blue1);
+  }
+  .p-dropdown {
+    border-radius: 0;
+    border: 1px solid var(--blue1);
+  }
+  .p-dropdown:not(.p-disabled).p-focus {
+    box-shadow: none;
+  }
+  .p-tabview {
+    .p-tabview-panels {
+      display: none;
     }
-    .p-tabview {
-        .p-tabview-panels {
-            display: none;
+
+    .p-tabview-nav {
+      background: #EEEEEE;
+      border: none;
+
+      li {
+        width: 10em;
+        height: 5em;
+        margin-right: 1em;
+
+        .p-tabview-nav-link {
+          color: var(--blue1);
         }
-        .p-tabview-nav {
-            background: #EEEEEE;
-            border: none;
-            li {
-                width: 10em;
-                height: 5em;
-                margin-right: 1em;
-                .p-tabview-nav-link {
-                    color: var(--blue1);
-                }
-                .p-tabview-nav-link:not(.p-disabled):focus {
-                    box-shadow: none;
-                }
-            }
-            li.p-highlight .p-tabview-nav-link {
-                color: var(--blue1);
-                border-color: var(--red);
-            }
-            li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
-                color: var(--blue1);
-                border-color: var(--white);
-                border: none;
-                height: 4.85em;
-            }
-            .p-tabview-nav-link {
-                height: 5em;
-                .p-tabview-title {
-                    padding: 1rem 0.5rem 1rem 1.2rem;
-                    white-space: normal;
-                }
-            }
+
+        .p-tabview-nav-link:not(.p-disabled):focus {
+          box-shadow: none;
         }
+      }
+
+      li.p-highlight .p-tabview-nav-link {
+        color: var(--blue1);
+        border-color: var(--red);
+      }
+
+      li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+        color: var(--blue1);
+        border-color: var(--white);
+        border: none;
+        height: 4.85em;
+      }
+
+      .p-tabview-nav-link {
+        height: 5em;
+
+        .p-tabview-title {
+          padding: 1rem 0.5rem 1rem 1.2rem;
+          white-space: normal;
+        }
+      }
     }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue1); 
+  border-radius: 5px;
 }

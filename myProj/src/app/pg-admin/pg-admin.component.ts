@@ -1,6 +1,6 @@
-import { PrimeNGConfig } from 'primeng/api';
 import { RepoService } from './../repo.service';
 import { Component, OnInit } from '@angular/core';
+import { gopArray } from './pgAdimn';
 
 @Component({
   selector: 'app-pg-admin',
@@ -10,16 +10,38 @@ import { Component, OnInit } from '@angular/core';
 export class PgAdminComponent implements OnInit {
 
   assignedPgs!: any;
-  selectedPg!: string;
+  selectedPg!: { pgId: 11418, name: 'ACSA (UPA)TEST' };
+  loadingGopArray!: gopArray[];
+  dischargeGopArray!: gopArray[];
+  isTabOpen = [true, false, false];
 
   constructor(
-    private repo: RepoService,
-    private primengConfig: PrimeNGConfig
-    ) { }
+    private repo: RepoService
+    ) {  }
 
   ngOnInit(): void {
-    this.primengConfig.ripple = false;
-    this.assignedPgs = ['ACSA (UPA)TEST', 'BALTIC EXPORT HO (UPA)TEST','MRS ASIA TO CARIB/MANAUS-ALL', 'MRS-NEUR TO ASIA-ALL'];
+    this.assignedPgs = [
+      { pgId: 11418, name: 'ACSA (UPA)TEST' },
+      { pgId: 11448, name: 'BALTIC EXPORT HO (UPA)TEST' },
+      { pgId: 11596, name: 'MRS ASIA TO CARIB/MANAUS-ALL' },
+      { pgId: 11665, name: 'MRS-NEUR TO ASIA-ALL' }
+    ];
+    this.getGopArray(this.selectedPg?.pgId);
+  }
+
+  changeTab(event: any) {
+    switch (event?.index) {
+      case 0: this.isTabOpen = [true, false, false];break;
+      case 1: this.isTabOpen = [false, true, false];break;
+      case 2: this.isTabOpen = [false, false, true];break;
+    }
+  }
+  
+  getGopArray(pgId: number) {
+    this.repo.getGopArray().subscribe((gop: gopArray[]) => {
+      this.loadingGopArray = gop.filter(ele => ele.groupOfPortType === 'LOADING' && ele.pricingGroupId === pgId);
+      this.dischargeGopArray = gop.filter(ele => ele.groupOfPortType === 'DISCHARGE' && ele.pricingGroupId === pgId);
+    });
   }
 
 }

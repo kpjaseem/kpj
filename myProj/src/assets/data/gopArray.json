@@ -1,0 +1,227 @@
+[
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "001061",
+        "groupOfPortId": 1911,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "010612",
+        "groupOfPortId": 1912,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1061GOP",
+        "groupOfPortId": 1913,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1061GOPTEST",
+        "groupOfPortId": 1914,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1061L",
+        "groupOfPortId": 1915,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1082D",
+        "groupOfPortId": 1916,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1084D",
+        "groupOfPortId": 1917,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1111061",
+        "groupOfPortId": 1918,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "12DEC",
+        "groupOfPortId": 1919,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1621GOPL",
+        "groupOfPortId": 1920,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "LOADING",
+        "groupOfPortName": "1GOP",
+        "groupOfPortId": 1921,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "DISCHARGE",
+        "groupOfPortName": "21A2",
+        "groupOfPortId": 1956,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "DISCHARGE",
+        "groupOfPortName": "21A3",
+        "groupOfPortId": 1957,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "DISCHARGE",
+        "groupOfPortName": "661RD",
+        "groupOfPortId": 1958,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "DISCHARGE",
+        "groupOfPortName": "990D",
+        "groupOfPortId": 1959,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    },
+    {
+        "pricingGroupId": 11596,
+        "groupOfPortType": "DISCHARGE",
+        "groupOfPortName": "A13",
+        "groupOfPortId": 1960,
+        "ratedPorts": [
+            {"cargoRates": [{"equipmentSizeType": "20ST"},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"mainPort": true,"port": { "code": "FRDKK", "name": "FRDKK" },"ratedPortId": 5454,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 1},{"equipmentSizeType": "40ST", "rate": 1},{"equipmentSizeType": "40HC", "rate": 1},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-05","expirationDate": "2022-01-07","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5455,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 2},{"equipmentSizeType": "40ST", "rate": 2},{"equipmentSizeType": "40HC", "rate": 2},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-08","expirationDate": "2022-01-10","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5456,"refrigerated": false},
+            {"cargoRates": [{"equipmentSizeType": "20ST", "rate": 3},{"equipmentSizeType": "40ST"},{"equipmentSizeType": "40HC"},{"equipmentSizeType": "45HC"}],"effectiveDate": "2022-01-11","mainPort": false,"port": { "code": "FRLEH", "name": "FRLEH" },"ratedPortId": 5457,"refrigerated": false}
+        ],
+        "shippingCompany": "0001",
+        "validGop": true
+    }
+]
