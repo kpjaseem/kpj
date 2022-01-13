@@ -1,0 +1,16 @@
+@import 'src/assets/mixins.scss';
+@import 'src/styles.scss';
+
+@include deep {
+    .p-dialog {
+        .p-dialog-header {
+            padding: 1rem;
+            .p-dialog-header-icon:last-child {
+                margin-left: 1rem;
+            }
+        }
+        .p-dialog-content{
+            padding: 0 1.5rem 1.5rem;
+        }
+    }
+}

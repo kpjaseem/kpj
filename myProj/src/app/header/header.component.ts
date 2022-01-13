@@ -1,3 +1,5 @@
+import { filter } from 'rxjs/operators';
+import { Router, NavigationEnd } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,8 +16,11 @@ export class HeaderComponent implements OnInit {
   assignedPgs!: string[];
   selectedCarrier: any;
   carrierOptions = [{}];
+  currentRoute!: any;
 
-  constructor() { }
+  constructor(private router: Router) {
+    router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => this.currentRoute = event);
+  }
 
   ngOnInit(): void {
     this.assignedPgs = ['ACSA (UPA)TEST', 'BALTIC EXPORT HO (UPA)TEST','MRS ASIA TO CARIB/MANAUS-ALL', 'MRS-NEUR TO ASIA-ALL'];

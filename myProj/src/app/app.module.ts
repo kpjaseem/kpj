@@ -11,6 +11,7 @@ import {ToastModule} from 'primeng/toast';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {TabViewModule} from 'primeng/tabview';
 import {HttpClientModule} from '@angular/common/http';
+import {DialogModule} from 'primeng/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { AquaLandingComponent } from './aqua-landing/aqua-landing.component';
 import { MessageService } from 'primeng/api';
 import { PgAdminComponent } from './pg-admin/pg-admin.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     LoginComponent,
     AquaLandingComponent,
     PgAdminComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     InputTextModule,
     ToastModule,
     BreadcrumbModule,
-    TabViewModule
+    TabViewModule,
+    DialogModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

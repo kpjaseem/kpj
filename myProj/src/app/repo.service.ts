@@ -21,4 +21,8 @@ export class RepoService {
   getGopArray(): Observable<gopArray[]> {
     return this.http.get<gopArray[]>('assets/data/gopArray.json');
   }
+
+  getGopHistory(): Observable<any> {
+    return this.http.get<any>('assets/data/gopHistory.json');
+  }
 }

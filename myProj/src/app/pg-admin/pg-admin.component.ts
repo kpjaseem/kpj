@@ -10,23 +10,26 @@ import { gopArray } from './pgAdimn';
 export class PgAdminComponent implements OnInit {
 
   assignedPgs!: any;
-  selectedPg!: { pgId: 11418, name: 'ACSA (UPA)TEST' };
+  selectedPg: any;
   loadingGopArray!: gopArray[];
   dischargeGopArray!: gopArray[];
   isTabOpen = [true, false, false];
+  isHistoryOpen = false;
+  history: any;
 
   constructor(
     private repo: RepoService
     ) {  }
 
   ngOnInit(): void {
+    this.selectedPg = { pgId: 11418, name: 'ACSA (UPA)TEST' };
     this.assignedPgs = [
       { pgId: 11418, name: 'ACSA (UPA)TEST' },
       { pgId: 11448, name: 'BALTIC EXPORT HO (UPA)TEST' },
       { pgId: 11596, name: 'MRS ASIA TO CARIB/MANAUS-ALL' },
       { pgId: 11665, name: 'MRS-NEUR TO ASIA-ALL' }
     ];
-    this.getGopArray(this.selectedPg?.pgId);
+    this.getGopArray(this.selectedPg.pgId);
   }
 
   changeTab(event: any) {
@@ -42,6 +45,13 @@ export class PgAdminComponent implements OnInit {
       this.loadingGopArray = gop.filter(ele => ele.groupOfPortType === 'LOADING' && ele.pricingGroupId === pgId);
       this.dischargeGopArray = gop.filter(ele => ele.groupOfPortType === 'DISCHARGE' && ele.pricingGroupId === pgId);
     });
+  }
+
+  getGopHistory(gopType: string) {
+    this.isHistoryOpen = true;
+    this.repo.getGopHistory().subscribe(data => {
+      this.history = data.filter((ele: any) => ele.gopType === gopType);
+    })
   }
 
 }

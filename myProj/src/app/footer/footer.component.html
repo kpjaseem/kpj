@@ -1,0 +1,15 @@
+<div class="footer" style="background: rgb(4,2,75);height: 10em;padding: 1rem 1rem 1rem 4rem;">
+    <div class="grid">
+        <div class="col-9">
+            <img src="assets/images/logo-cma-white.png" alt="Image not found" style="height: 9em;">
+        </div>
+        <div class="col-3" style="line-height: 9;text-align: right;color: var(--white);text-decoration: underline;">
+            <span class="col-1" style="text-align: right;cursor: pointer;" (click)="faq()">Help</span>
+            <span class="col-1 ml-4 mr-4" style="text-align: right;cursor: pointer;" (click)="faq()">FAQ</span>
+        </div>
+    </div>
+</div>
+
+<p-dialog header="Contact us" [(visible)]="faqDialog" position="right">
+    +91 9995983248
+</p-dialog>
