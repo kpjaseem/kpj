@@ -1,6 +1,7 @@
+import { pgAdminConstants } from './pgAdminConstants';
 import { RepoService } from './../repo.service';
 import { Component, OnInit } from '@angular/core';
-import { gopArray } from './pgAdimn';
+import { gopArray } from './pgAdmin';
 
 @Component({
   selector: 'app-pg-admin',
@@ -15,7 +16,20 @@ export class PgAdminComponent implements OnInit {
   dischargeGopArray!: gopArray[];
   isTabOpen = [true, false, false];
   isHistoryOpen = false;
+  gopSidebar = false;
   history: any;
+  gopType!: string;
+  gopTypeRadio!: string;
+  eqpTypeRadio!: string;
+  countries!: any;
+  // = ['']
+  countrySuggestion = [''];
+  portSuggestion = [''];
+  ports: any;
+  isPortDropOpen = false;
+  portFromUser!: string;
+  col = pgAdminConstants.REEFER_TABLE_COLUMNS;
+  tableHeaderCheckbox: any;
 
   constructor(
     private repo: RepoService
@@ -47,11 +61,25 @@ export class PgAdminComponent implements OnInit {
     });
   }
 
-  getGopHistory(gopType: string) {
+  getGopHistory(gopType: string, pgId: any) {
+    this.gopType = gopType;
     this.isHistoryOpen = true;
-    this.repo.getGopHistory().subscribe(data => {
-      this.history = data.filter((ele: any) => ele.gopType === gopType);
+    this.repo.getGopHistory().subscribe(history => {
+      this.history = history.filter((ele: any) => ele.gopType === gopType && ele.pgId === pgId);
+    });
+  }
+
+  getCountries(event: any) {
+    this.repo.getCountries().subscribe(country => {
+      this.countrySuggestion = country.filter((ele: any) => ele.name.toUpperCase().includes(event.query.toUpperCase()));
     })
+  }
+
+  getPorts() {
+    this.repo.getCountries().subscribe(country => {
+      this.portSuggestion = this.portFromUser.length ? country.filter((ele: any) => ele.name.toUpperCase().includes(this.portFromUser.toUpperCase())) : country;
+    })
+    this.isPortDropOpen = this.portFromUser.length ? true : false;
   }
 
 }

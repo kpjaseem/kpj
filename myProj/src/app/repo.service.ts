@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { gopArray } from './pg-admin/pgAdimn';
+import { gopArray } from './pg-admin/pgAdmin';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +24,9 @@ export class RepoService {
 
   getGopHistory(): Observable<any> {
     return this.http.get<any>('assets/data/gopHistory.json');
+  }
+
+  getCountries(): Observable<any> {
+    return this.http.get<any>('assets/data/countries.json');
   }
 }

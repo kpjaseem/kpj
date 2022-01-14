@@ -21,7 +21,7 @@
             <p-tabPanel header="PG infos"></p-tabPanel>
             <p-tabPanel header="Commodities"></p-tabPanel>
         </p-tabView>
-        <div class="line mt-2"></div>
+        <!-- <div class="line mt-2"></div> -->
     </div>
     <div class="mt-2" style="background: var(--white);">
         <div *ngIf="isTabOpen[0]">
@@ -29,7 +29,9 @@
                 <div class="loading col-6">
                     <div class="grid">
                         <div class="col-10">LOADING GOP / TAD</div>
-                        <div class="col-2 history" (click)="getGopHistory('LOADING')">History <em class="pi pi-book"></em>
+                        <div class="col-2 history"
+                            (click)="getGopHistory('LOADING', loadingGopArray[0]?.pricingGroupId)">History
+                            <em class="pi pi-book"></em>
                         </div>
                     </div>
                     <div style="height: 17em;">
@@ -47,7 +49,9 @@
                 <div class="discharging col-6">
                     <div class="grid">
                         <div class="col-10">DISCHARGE GOP / TAD</div>
-                        <div class="col-2 history" (click)="getGopHistory('DISCHARGE')">History <em class="pi pi-book"></em>
+                        <div class="col-2 history"
+                            (click)="getGopHistory('DISCHARGE', dischargeGopArray[0].pricingGroupId)">History
+                            <em class="pi pi-book"></em>
                         </div>
                     </div>
                     <div style="height: 17em;">
@@ -66,7 +70,8 @@
             <div class="buttonContainer grid">
                 <div class="col-9"></div>
                 <div class="col-3">
-                    <button type="button" pButton label="Create GOP / TAD" class="p-button-danger"></button>
+                    <button type="button" pButton label="Create GOP / TAD" class="p-button-danger"
+                        (click)="gopSidebar = true"></button>
                     <button type="button" pButton label="Cancel" class="p-button-secondary ml-4"
                         [routerLink]="'/home'"></button>
                 </div>
@@ -83,17 +88,78 @@
 
 <p-sidebar [(visible)]="isHistoryOpen" [baseZIndex]="3000" position="right" [style]="{'width':'40%'}">
     <div class="mb-6 historySidebar">
-        <div class="title-sub-header">{{history[0]?.gopType}} GOP / TAD history</div>
+        <div class="title-sub-header">{{gopType}} GOP / TAD history</div>
         <div class="mt-4 historyContainer">
             <div *ngFor="let item of history" [ngClass]="{'noScroll': history?.length > 13}">
                 <div class="line1 mb-2"></div>
-                <div>{{item.date | date:'dd/mm/yyyy'}}/{{item.time}} | {{item.user}} / {{item.content}}</div>
+                <div>{{item.date | date: 'dd-MMM-yy'}}/{{item.time}} | {{item.user}} / {{item.content}}</div>
                 <div class="line1 mt-2"></div>
             </div>
         </div>
     </div>
     <div class="line"></div>
     <div class="p-grid btn">
-        <button type="button" pButton label="Close" class="col-offset-10 p-button-secondary" (click)="isHistoryOpen = false"></button>
+        <button type="button" pButton label="Close" class="col-offset-10 p-button-secondary"
+            (click)="isHistoryOpen = false"></button>
+    </div>
+</p-sidebar>
+
+<p-sidebar [(visible)]="gopSidebar" class="gopSidebar" [baseZIndex]="3000" position="right" [style]="{'width':'70%'}">
+    <div class="title-sub-header">New group of port / TAD</div>
+    <div class="mt-5" style="display: flex;">
+        <span>
+            <p-radioButton name="gopType" value="loading" label="Loading ports group" [(ngModel)]="gopTypeRadio">
+            </p-radioButton>
+        </span>
+        <div class="ml-4">
+            <p-radioButton name="gopType" value="discharging" label="Discharge ports group" [(ngModel)]="gopTypeRadio">
+            </p-radioButton>
+        </div>
+        <div class="vl1"></div>
+        <span>
+            <p-radioButton name="eqpType" value="dry" label="Dry" [(ngModel)]="eqpTypeRadio"></p-radioButton>
+        </span>
+        <div class="ml-4">
+            <p-radioButton name="eqpType" value="reefer" label="Reefer" [(ngModel)]="eqpTypeRadio"></p-radioButton>
+        </div>
+    </div>
+    <div class="line1 mt-4"></div>
+    <div class="mt-4">
+        <div class="grid">
+            <div class="col-4">Country</div>
+            <div class="col-4">Ports</div>
+            <div class="col-4">GOP / TAD name</div>
+        </div>
+        <div class="grid">
+            <div class="col-4">
+                <p-autoComplete class="testClass" [(ngModel)]="countries" [suggestions]="countrySuggestion"
+                    [dropdown]="true" (completeMethod)="getCountries($event)" [multiple]="true"
+                    placeholder="Select a country" dropdownIcon="pi pi-search">
+                    <ng-template let-country pTemplate="item">
+                        <div>{{country.name}}</div>
+                    </ng-template>
+                    <ng-template let-country pTemplate="selectedItem">
+                        <div>{{country.name}}</div>
+                    </ng-template>
+                </p-autoComplete>
+            </div>
+            <div class="col-4">
+                <input type="text" pInputText class="box1" (keyup)="getPorts()" [(ngModel)]="portFromUser">
+                <p-multiSelect [options]="portSuggestion" [(ngModel)]="ports" class="overlay" dropdownIcon="pi pi-search" (onClick)="getPorts()"
+                    optionLabel="name" [overlayVisible]="isPortDropOpen" [showHeader]="false" (onPanelHide)="portFromUser = ''">
+                    <ng-template let-port pTemplate="item">
+                        <div>{{port.name}} ({{port.code}})</div>
+                    </ng-template>
+                </p-multiSelect>
+            </div>
+            <div class="col-4">
+                <input type="text" pInputText placeholder="Type a new name (max. 20 characters)"
+                    oninput="this.value = this.value.toUpperCase()">
+            </div>
+        </div>
+    </div>
+    <div class="line1 mt-2"></div>
+    <div class="mt-2 mr-1 grid">
+        <span class="ml-auto dashboardLink">Delete</span>
     </div>
 </p-sidebar>

@@ -12,6 +12,10 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {TabViewModule} from 'primeng/tabview';
 import {HttpClientModule} from '@angular/common/http';
 import {DialogModule} from 'primeng/dialog';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {TableModule} from 'primeng/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,7 +51,11 @@ import { FooterComponent } from './footer/footer.component';
     ToastModule,
     BreadcrumbModule,
     TabViewModule,
-    DialogModule
+    DialogModule,
+    RadioButtonModule,
+    AutoCompleteModule,
+    MultiSelectModule,
+    TableModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

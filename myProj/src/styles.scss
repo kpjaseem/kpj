@@ -2,6 +2,20 @@
 // @import 'src/assets/theme.scss';
 @import 'src/assets/mixins.scss';
 
+@include deep {
+    .p-checkbox {
+        .p-checkbox-box {
+            border-color: var(--blue12) !important;
+            border-radius: 0;
+            transition: none;
+            &.p-highlight {
+                background: var(--blue1) !important;
+                border-color: var(--blue1) !important;
+            }
+        }
+    }
+}
+
 :root {
     --red: #e20101;
     --red1: #e00054;
