@@ -39,8 +39,8 @@
                             [ngClass]="{'heightAndOverflow' : loadingGopArray.length > 10}">
                             <div class="col-6" style="display: flex;" *ngFor="let item of loadingGopArray">
                                 <input readonly class="first" type="text" pInputText [value]="item.groupOfPortName">
-                                <div class="icons" style="border-right: none;"><em class="pi pi-eye"></em></div>
-                                <div class="icons"><em class="pi pi-pencil"></em></div>
+                                <div class="icons" style="border-right: none;"><em class="pi pi-eye" (click)="openGopSidebar('VIEW')"></em></div>
+                                <div class="icons"><em class="pi pi-pencil" (click)="openGopSidebar('EDIT')"></em></div>
                             </div>
                         </div>
                     </div>
@@ -104,23 +104,25 @@
     </div>
 </p-sidebar>
 
-<p-sidebar [(visible)]="gopSidebar" class="gopSidebar" [baseZIndex]="3000" position="right" [style]="{'width':'70%'}">
-    <div class="title-sub-header">New group of port / TAD</div>
+<p-sidebar [(visible)]="gopSidebar" (onHide)="gopSidebar = false" class="gopSidebar" [baseZIndex]="3000" position="right" [style]="{'width':'70%'}">
+    <div class="title-sub-header" *ngIf="operationType === 'CREATE'">New group of port / TAD</div>
+    <div class="title-sub-header" *ngIf="operationType === 'EDIT'">Edit group of port / TAD</div>
+    <div class="title-sub-header" *ngIf="operationType === 'VIEW'">View group of port / TAD</div>
     <div class="mt-5" style="display: flex;">
         <span>
-            <p-radioButton name="gopType" value="loading" label="Loading ports group" [(ngModel)]="gopTypeRadio">
+            <p-radioButton name="gopType" [disabled]="operationType === 'VIEW'" value="loading" label="Loading ports group" [(ngModel)]="gopTypeRadio">
             </p-radioButton>
         </span>
         <div class="ml-4">
-            <p-radioButton name="gopType" value="discharging" label="Discharge ports group" [(ngModel)]="gopTypeRadio">
+            <p-radioButton name="gopType" [disabled]="operationType === 'VIEW'" value="discharging" label="Discharge ports group" [(ngModel)]="gopTypeRadio">
             </p-radioButton>
         </div>
         <div class="vl1"></div>
         <span>
-            <p-radioButton name="eqpType" value="dry" label="Dry" [(ngModel)]="eqpTypeRadio"></p-radioButton>
+            <p-radioButton name="eqpType" [disabled]="operationType === 'VIEW'" value="dry" label="Dry" [(ngModel)]="eqpTypeRadio"></p-radioButton>
         </span>
         <div class="ml-4">
-            <p-radioButton name="eqpType" value="reefer" label="Reefer" [(ngModel)]="eqpTypeRadio"></p-radioButton>
+            <p-radioButton name="eqpType" [disabled]="operationType === 'VIEW'" value="reefer" label="Reefer" [(ngModel)]="eqpTypeRadio"></p-radioButton>
         </div>
     </div>
     <div class="line1 mt-4"></div>
@@ -134,7 +136,7 @@
             <div class="col-4">
                 <p-autoComplete class="testClass" [(ngModel)]="countries" [suggestions]="countrySuggestion"
                     [dropdown]="true" (completeMethod)="getCountries($event)" [multiple]="true"
-                    placeholder="Select a country" dropdownIcon="pi pi-search">
+                    placeholder="Select a country" dropdownIcon="pi pi-search" [disabled]="operationType === 'VIEW'">
                     <ng-template let-country pTemplate="item">
                         <div>{{country.name}}</div>
                     </ng-template>
@@ -144,8 +146,8 @@
                 </p-autoComplete>
             </div>
             <div class="col-4">
-                <input type="text" pInputText class="box1" (keyup)="getPorts()" [(ngModel)]="portFromUser">
-                <p-multiSelect [options]="portSuggestion" [(ngModel)]="ports" class="overlay"
+                <input type="text" pInputText class="box1" [disabled]="operationType === 'VIEW'" (keyup)="getPorts()" [(ngModel)]="portFromUser">
+                <p-multiSelect [options]="portSuggestion" [(ngModel)]="ports" class="overlay" [disabled]="operationType === 'VIEW'"
                     dropdownIcon="pi pi-search" (onClick)="getPorts()" optionLabel="name"
                     [overlayVisible]="isPortDropOpen" scrollHeight="120px" [showHeader]="false"
                     (onPanelHide)="getTableData()">
@@ -155,14 +157,14 @@
                 </p-multiSelect>
             </div>
             <div class="col-4">
-                <input type="text" [(ngModel)]="gopName" pInputText placeholder="Type a new name (max. 20 characters)"
+                <input type="text" [(ngModel)]="gopName" [disabled]="operationType === 'VIEW'" pInputText placeholder="Type a new name (max. 20 characters)"
                     oninput="this.value = this.value.toUpperCase()">
             </div>
         </div>
     </div>
     <div class="line1 mt-2"></div>
     <div class="mt-2 mr-1 grid">
-        <span class="ml-auto dashboardLink">Delete</span>
+        <span class="ml-auto dashboardLink" [ngClass]="{'blue12': !selectedProducts3?.length}">Delete</span>
     </div>
     <div style="height: 17em;overflow-y: scroll;" class="table">
         <p-table [value]="tableArray" [columns]="col" [(selection)]="selectedProducts3" responsiveLayout="scroll">
@@ -179,7 +181,9 @@
             </ng-template>
             <ng-template pTemplate="body" let-product let-columns="columns" let-rowIndex="rowIndex">
                 <tr>
-                    <p-tableCheckbox [value]="product" class="tableCheck"></p-tableCheckbox>
+                    <td>
+                        <p-tableCheckbox></p-tableCheckbox>
+                    </td>
                     <td *ngFor="let col of columns" [attr.colspan]="col.colSpan" [style.text-align]="col.align">
                         <span *ngIf="col.field === 'port'">{{product[col.field]}}</span>
                         <p-inputSwitch *ngIf="col.field === 'mainPort'" [(ngModel)]="product['mainPort']"
@@ -206,9 +210,9 @@
         <div class="col-9"></div>
         <div class="col-3">
             <button *ngIf="operationType !== 'VIEW'" type="button" pButton label="Create" class="p-button-danger"
-                (click)="gopSidebar = false"></button>
+                (click)="createGOP()"></button>
             <button type="button" pButton label="Cancel" class="p-button-secondary ml-4"
-            (click)="createGOP()"></button>
+            (click)="gopSidebar = false"></button>
         </div>
     </div>
 </p-sidebar>

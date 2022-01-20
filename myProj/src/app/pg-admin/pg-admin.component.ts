@@ -35,7 +35,8 @@ export class PgAdminComponent implements OnInit {
   gopName!: string;
 
 
-  selectedProducts3!: GopTable;
+  selectedProducts3!: any;
+  tableCheck: any;
   tableCalendarValidFrom!: Date;
 
   constructor(
@@ -86,9 +87,9 @@ export class PgAdminComponent implements OnInit {
 
   getPorts() {
     this.repo.getCountries().subscribe(country => {
-      this.portSuggestion = this.portFromUser.length ? country.filter((ele: any) => ele.name.toUpperCase().includes(this.portFromUser.toUpperCase())) : country;
+      this.portSuggestion = this.portFromUser?.length ? country.filter((ele: any) => ele.name.toUpperCase().includes(this.portFromUser.toUpperCase())) : country;
     })
-    this.isPortDropOpen = this.portFromUser.length ? true : false;
+    this.isPortDropOpen = this.portFromUser?.length ? true : false;
   }
 
   getTableData() {
