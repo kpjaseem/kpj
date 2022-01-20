@@ -1,7 +1,9 @@
+import { MessageService } from 'primeng/api';
 import { pgAdminConstants } from './pgAdminConstants';
 import { RepoService } from './../repo.service';
 import { Component, OnInit } from '@angular/core';
-import { gopArray } from './pgAdmin';
+import { gopArray, GopTable } from './pgAdmin';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pg-admin',
@@ -22,20 +24,27 @@ export class PgAdminComponent implements OnInit {
   gopTypeRadio!: string;
   eqpTypeRadio!: string;
   countries!: any;
-  // = ['']
-  countrySuggestion = [''];
+  countrySuggestion: any;
   portSuggestion = [''];
   ports: any;
   isPortDropOpen = false;
   portFromUser!: string;
   col = pgAdminConstants.REEFER_TABLE_COLUMNS;
-  tableHeaderCheckbox: any;
+  tableArray: any[] = [];
+  operationType!: string;
+  gopName!: string;
+
+
+  selectedProducts3!: GopTable;
+  tableCalendarValidFrom!: Date;
 
   constructor(
-    private repo: RepoService
+    private repo: RepoService,
+    private toast: MessageService
     ) {  }
 
   ngOnInit(): void {
+    this.countrySuggestion = [23, 45];
     this.selectedPg = { pgId: 11418, name: 'ACSA (UPA)TEST' };
     this.assignedPgs = [
       { pgId: 11418, name: 'ACSA (UPA)TEST' },
@@ -80,6 +89,45 @@ export class PgAdminComponent implements OnInit {
       this.portSuggestion = this.portFromUser.length ? country.filter((ele: any) => ele.name.toUpperCase().includes(this.portFromUser.toUpperCase())) : country;
     })
     this.isPortDropOpen = this.portFromUser.length ? true : false;
+  }
+
+  getTableData() {
+    this.portFromUser = '';
+    this.tableArray = [
+      {
+        port: 'FRLEH',
+        mainPort: false,
+        twentyrf: '',
+        fortyrh: '',
+        validFrom: '',
+        validTo: ''
+      },
+      {
+        port: 'FRLEH',
+        mainPort: false,
+        twentyrf: '',
+        fortyrh: '',
+        validFrom: '',
+        validTo: ''
+      }
+    ]
+  }
+
+  toggleInputSwitch(rowIndex: number) {
+    this.tableArray.forEach((ele, index) => {
+      if (rowIndex !== index) { ele.mainPort = false }
+    })
+  }
+
+  openGopSidebar(operation: string) {
+    this.gopSidebar = true;
+    this.operationType = operation;
+  }
+
+  createGOP() {
+    this.gopSidebar = false;
+    this.toast.clear('pgAdmin');
+    this.toast.add({key: 'pgAdmin',severity: 'info', summary: `GOP ${this.gopName} created`})
   }
 
 }

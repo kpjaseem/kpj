@@ -59,8 +59,8 @@
                             [ngClass]="dischargeGopArray.length > 10 ? 'heightAndOverflow':''">
                             <div class="col-6" style="display: flex;" *ngFor="let item of dischargeGopArray">
                                 <input readonly class="first" type="text" pInputText [value]="item.groupOfPortName">
-                                <div class="icons" style="border-right: none;"><em class="pi pi-eye"></em></div>
-                                <div class="icons"><em class="pi pi-pencil"></em></div>
+                                <div class="icons" style="border-right: none;"><em class="pi pi-eye" (click)="openGopSidebar('VIEW')"></em></div>
+                                <div class="icons"><em class="pi pi-pencil" (click)="openGopSidebar('EDIT')"></em></div>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                 <div class="col-9"></div>
                 <div class="col-3">
                     <button type="button" pButton label="Create GOP / TAD" class="p-button-danger"
-                        (click)="gopSidebar = true"></button>
+                        (click)="openGopSidebar('CREATE')"></button>
                     <button type="button" pButton label="Cancel" class="p-button-secondary ml-4"
                         [routerLink]="'/home'"></button>
                 </div>
@@ -145,15 +145,17 @@
             </div>
             <div class="col-4">
                 <input type="text" pInputText class="box1" (keyup)="getPorts()" [(ngModel)]="portFromUser">
-                <p-multiSelect [options]="portSuggestion" [(ngModel)]="ports" class="overlay" dropdownIcon="pi pi-search" (onClick)="getPorts()"
-                    optionLabel="name" [overlayVisible]="isPortDropOpen" [showHeader]="false" (onPanelHide)="portFromUser = ''">
+                <p-multiSelect [options]="portSuggestion" [(ngModel)]="ports" class="overlay"
+                    dropdownIcon="pi pi-search" (onClick)="getPorts()" optionLabel="name"
+                    [overlayVisible]="isPortDropOpen" scrollHeight="120px" [showHeader]="false"
+                    (onPanelHide)="getTableData()">
                     <ng-template let-port pTemplate="item">
                         <div>{{port.name}} ({{port.code}})</div>
                     </ng-template>
                 </p-multiSelect>
             </div>
             <div class="col-4">
-                <input type="text" pInputText placeholder="Type a new name (max. 20 characters)"
+                <input type="text" [(ngModel)]="gopName" pInputText placeholder="Type a new name (max. 20 characters)"
                     oninput="this.value = this.value.toUpperCase()">
             </div>
         </div>
@@ -162,4 +164,53 @@
     <div class="mt-2 mr-1 grid">
         <span class="ml-auto dashboardLink">Delete</span>
     </div>
+    <div style="height: 17em;overflow-y: scroll;" class="table">
+        <p-table [value]="tableArray" [columns]="col" [(selection)]="selectedProducts3" responsiveLayout="scroll">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 3rem" scope="col">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th *ngFor="let col of columns" [attr.colspan]="col.colSpan" [style.text-align]="col.align"
+                        scope="col">
+                        <span>{{col.header}}</span>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product let-columns="columns" let-rowIndex="rowIndex">
+                <tr>
+                    <p-tableCheckbox [value]="product" class="tableCheck"></p-tableCheckbox>
+                    <td *ngFor="let col of columns" [attr.colspan]="col.colSpan" [style.text-align]="col.align">
+                        <span *ngIf="col.field === 'port'">{{product[col.field]}}</span>
+                        <p-inputSwitch *ngIf="col.field === 'mainPort'" [(ngModel)]="product['mainPort']"
+                            (onChange)="toggleInputSwitch(rowIndex)"></p-inputSwitch>
+                        <span *ngIf="col.field === 'twentyrf'">
+                            <input *ngIf="!product['mainPort'] && product['twentyrf']" style="width: 35%;" type="text"
+                                pInputText [value]="product['twentyrf']">
+                            <span *ngIf="!product['twentyrf']">--</span>
+                        </span>
+                        <span *ngIf="col.field === 'fortyrh'">
+                            <input *ngIf="!product['mainPort'] && product['fortyrh']" style="width: 35%;" type="text" pInputText>
+                            <span *ngIf="!product['fortyrh']">--</span>
+                        </span>
+                        <p-calendar *ngIf="col.field === 'validFrom' && !product['mainPort']"
+                            [(ngModel)]="tableCalendarValidFrom"></p-calendar>
+                        <p-calendar *ngIf="col.field === 'validTo' && !product['mainPort']"
+                            [(ngModel)]="tableCalendarValidFrom"></p-calendar>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="buttonContainer grid" style="padding-bottom: 6.5em;">
+        <div class="col-9"></div>
+        <div class="col-3">
+            <button *ngIf="operationType !== 'VIEW'" type="button" pButton label="Create" class="p-button-danger"
+                (click)="gopSidebar = false"></button>
+            <button type="button" pButton label="Cancel" class="p-button-secondary ml-4"
+            (click)="createGOP()"></button>
+        </div>
+    </div>
 </p-sidebar>
+
+<p-toast key="pgAdmin" position="bottom-right"></p-toast>

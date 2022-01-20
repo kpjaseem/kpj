@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CheckboxModule} from 'primeng/checkbox';
@@ -16,6 +16,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {TableModule} from 'primeng/table';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {CalendarModule} from 'primeng/calendar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +43,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     CheckboxModule,
@@ -55,7 +58,9 @@ import { FooterComponent } from './footer/footer.component';
     RadioButtonModule,
     AutoCompleteModule,
     MultiSelectModule,
-    TableModule
+    TableModule,
+    InputSwitchModule,
+    CalendarModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

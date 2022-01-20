@@ -257,14 +257,23 @@ l::-webkit-scrollbar-track {
 }
 
 @include deep {
+  .tableCheck {
+    .p-checkbox {
+      margin: 1.7em 1em 1em;
+    }
+  }
+  .p-datatable .p-datatable-thead > tr > th {
+    background: var(--white);
+  }
   .p-multiselect {
-    width: 102%;
+    width: 100%;
     .p-multiselect-trigger {
       z-index: 2;
+      width: 1.3rem;
     }
     .p-multiselect-panel {
-      min-width: 103%;
-      max-width: 103%;
+      min-width: 100%;
+      max-width: 100%;
       .p-multiselect-items .p-checkbox {
         position: absolute;
         right: 0;
@@ -278,6 +287,7 @@ l::-webkit-scrollbar-track {
       width: 100%;
       .p-autocomplete-panel {
         max-width: 100%;
+        max-height: 120px !important;
       }
       .p-autocomplete-multiple-container:not(.p-disabled).p-focus {
         box-shadow: none;

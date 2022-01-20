@@ -24,4 +24,21 @@ export interface gopArray {
     code: string;
     name: string;
   }
+
+  export interface GopTable {
+    Index?: number;
+    ratedPortId?: number;
+    port?: string;
+    name?: string;
+    mainPort?: boolean;
+    twentyST?: number;
+    fortyST?: number;
+    fortyHC?: number;
+    fortyFiveHC?: number;
+    twentyRF?: number;
+    fortyRH?: number;
+    from?: Date;
+    to?: Date;
+    toDate?: Date
+  }
   
