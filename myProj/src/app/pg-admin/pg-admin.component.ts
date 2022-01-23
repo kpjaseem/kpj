@@ -46,12 +46,12 @@ export class PgAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.countrySuggestion = [23, 45];
-    this.selectedPg = { pgId: 11418, name: 'ACSA (UPA)TEST' };
+    this.selectedPg = { pgId: 11418, name: 'ACSA (UPA)TEST', spotFlag: true, gol: ['FAL', 'CIMEX'] };
     this.assignedPgs = [
-      { pgId: 11418, name: 'ACSA (UPA)TEST' },
-      { pgId: 11448, name: 'BALTIC EXPORT HO (UPA)TEST' },
-      { pgId: 11596, name: 'MRS ASIA TO CARIB/MANAUS-ALL' },
-      { pgId: 11665, name: 'MRS-NEUR TO ASIA-ALL' }
+      { pgId: 11418, name: 'ACSA (UPA)TEST', spotFlag: false, gol: ['FAL', 'CIMEX'] },
+      { pgId: 11448, name: 'BALTIC EXPORT HO (UPA)TEST', spotFlag: true, gol: ['FAL', 'CIMEX'] },
+      { pgId: 11596, name: 'MRS ASIA TO CARIB/MANAUS-ALL', spotFlag: true, gol: ['FAL', 'CIMEX'] },
+      { pgId: 11665, name: 'MRS-NEUR TO ASIA-ALL', spotFlag: false, gol: ['FAL', 'CIMEX'] }
     ];
     this.getGopArray(this.selectedPg.pgId);
   }

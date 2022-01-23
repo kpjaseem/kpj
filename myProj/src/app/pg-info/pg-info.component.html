@@ -1,0 +1,51 @@
+<div class="pgInfo">
+    <div class="pgInfoContainer">
+        <span class="pgName">{{selectedPg.name}}</span>
+        <div class="infoBody grid">
+            <div class="col-4">
+                <p-dropdown [options]="pgScopeOption" [(ngModel)]="pgScope" placeholder="Pricing group scope"
+                    optionDisabled="zol">
+                    <ng-template pTemplate="item" let-pgScope>
+                        <div *ngIf="pgScope.isNeeded">
+                            <span>ZOL</span>
+                            <span class="zod">ZOD</span>
+                        </div>
+                        <div class="grid">
+                            <div class="col-5"><span>{{pgScope.zol}}</span></div>
+                            <div class="col-2" style="padding-left: 1.5rem;"><em class="pi pi-chevron-right"
+                                    style="float: right;"></em></div>
+                            <div class="col-5"><span class="zod">{{pgScope.zod}}</span></div>
+                        </div>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+            <div class="col-4 golDrop">
+                <p-dropdown [options]="golOption" [(ngModel)]="gol" optionLabel="gol" placeholder="Group of lines"
+                    optionDisabled="gol"></p-dropdown>
+            </div>
+            <div class="col-4 spotPg">
+                <p-checkbox [(ngModel)]="spotPg" label="Spot PG" [binary]="selectedPg.spotFlag ? true : false"
+                    [disabled]="true"></p-checkbox>
+            </div>
+        </div>
+        <div class="countryBody grid">
+            <div class="col-4">
+                <div class="countryHeader">
+                    <div style="font-size: 20px">Customer Country</div>
+                    <div class="history1">History&nbsp;<em class="pi pi-book"></em></div>
+                </div>
+                <div class="mt-4">
+                    <div class="p-inputgroup">
+                        <input type="text" pInputText value="Customer country" readonly>
+                        <span class="p-inputgroup-addon eye"><em class="pi pi-eye" (click)="countrySidebar = true"></em></span>
+                        <span class="p-inputgroup-addon pencil"><em class="pi pi-pencil" (click)="countrySidebar = true"></em></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-sidebar [(visible)]="countrySidebar" [baseZIndex]="3000" position="right" [style]="{'width':'30%','padding':'3em 2em 2em'}">
+    <div class="title-sub-header">Customer Country</div>
+</p-sidebar>

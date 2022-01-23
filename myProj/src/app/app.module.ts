@@ -28,6 +28,7 @@ import { MessageService } from 'primeng/api';
 import { PgAdminComponent } from './pg-admin/pg-admin.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { FooterComponent } from './footer/footer.component';
+import { PgInfoComponent } from './pg-info/pg-info.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FooterComponent } from './footer/footer.component';
     AquaLandingComponent,
     PgAdminComponent,
     BreadcrumbComponent,
-    FooterComponent
+    FooterComponent,
+    PgInfoComponent
   ],
   imports: [
     BrowserModule,

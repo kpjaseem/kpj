@@ -1,0 +1,77 @@
+@import 'src/assets/mixins.scss';
+@import 'src/styles.scss';
+
+.pgInfo {
+    .pgInfoContainer {
+        padding: 4rem 3rem;
+    }
+    .pgName {
+        font-family: fantasy;
+        font-size: 30px;
+        color: var(--blue1);
+    }
+    .infoBody {
+        padding: 3em 1em;
+    }
+    .spotPg {
+        padding-left: 2em;
+        line-height: 1.85;
+    }
+    .zod {
+        right: 1rem;
+        position: absolute;
+    }
+    .countryBody {
+        padding: 3em 1em;
+        color: var(--blue1);
+        font-weight: bold;
+    }
+    .countryHeader {
+        display: flex;
+        justify-content: space-between;
+    }
+    .history1 {
+        cursor: pointer;
+        font-weight: normal;
+        color: var(--blue7);
+    }
+
+    @include deep {
+        .p-dropdown {
+            .p-dropdown-label.p-placeholder {
+                color: var(--blue1);
+                font-weight: bold;
+            }
+        }
+        .golDrop {
+            .p-dropdown {
+                .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
+        .countryBody {
+            .p-inputgroup input:first-child {
+                border-radius: 0;
+                border-right: none;
+                color: var(--blue1);
+                font-family: cursive;
+            }
+            .p-inputgroup-addon {
+                background-color: var(--white);
+                border: 1px solid var(--blue1);
+            }
+            .p-inputgroup-addon.eye {
+                border-right: none;
+                border-left: none;
+                color: var(--blue1);
+            }
+            .p-inputgroup-addon.pencil {
+                border-left: none;
+                border-radius: 0;
+                color: var(--blue1);
+            }
+        }
+    }
+}

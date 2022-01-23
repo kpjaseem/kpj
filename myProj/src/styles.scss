@@ -56,6 +56,31 @@
     --blueToaster: #0273e2;
 }
 
+font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../src/assets/fonts/google-fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-regular';
+    src: url(../src/assets/fonts/google-fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Antonio-regular';
+    src: url(../src/assets/fonts/google-fonts/Antonio-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Antonio';
+    src: url(../src/assets/fonts/google-fonts/Antonio-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Antonio-bold';
+    src: url(../src/assets/fonts/google-fonts/Antonio-Bold.ttf) format('truetype');
+}
+
 body {
     min-height: 100%;
     max-height: 100%;
