@@ -19,6 +19,12 @@ import {TableModule} from 'primeng/table';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {CalendarModule} from 'primeng/calendar';
 
+import { SvgIconsModule } from '@ngneat/svg-icon';
+import { printIcon } from 'src/assets/svg/pin';
+import { menuIcon } from 'src/assets/svg/menu';
+import { pinBlankIcon } from 'src/assets/svg/pin-blank';
+import { pinFilledIcon } from 'src/assets/svg/pin-filled';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -42,6 +48,11 @@ import { PgInfoComponent } from './pg-info/pg-info.component';
     PgInfoComponent
   ],
   imports: [
+    SvgIconsModule.forRoot({
+      icons: [
+        printIcon,menuIcon,pinBlankIcon,pinFilledIcon
+      ]
+    }),
     BrowserModule,
     AppRoutingModule,
     FormsModule,

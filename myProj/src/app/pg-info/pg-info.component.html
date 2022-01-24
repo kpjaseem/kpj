@@ -31,14 +31,14 @@
         <div class="countryBody grid">
             <div class="col-4">
                 <div class="countryHeader">
-                    <div style="font-size: 20px">Customer Country</div>
+                    <div style="font-size: 20px">CUSTOMER COUNTRY</div>
                     <div class="history1">History&nbsp;<em class="pi pi-book"></em></div>
                 </div>
                 <div class="mt-4">
                     <div class="p-inputgroup">
-                        <input type="text" pInputText value="Customer country" readonly>
-                        <span class="p-inputgroup-addon eye"><em class="pi pi-eye" (click)="countrySidebar = true"></em></span>
-                        <span class="p-inputgroup-addon pencil"><em class="pi pi-pencil" (click)="countrySidebar = true"></em></span>
+                        <input type="text" pInputText value="Commercial zone / Country" readonly>
+                        <span class="p-inputgroup-addon eye"><em class="pi pi-eye" (click)="countrySidebar = true;operationType = 'VIEW'"></em></span>
+                        <span class="p-inputgroup-addon pencil"><em class="pi pi-pencil" (click)="countrySidebar = true; operationType = 'EDIT'"></em></span>
                     </div>
                 </div>
             </div>
@@ -47,5 +47,6 @@
 </div>
 
 <p-sidebar [(visible)]="countrySidebar" [baseZIndex]="3000" position="right" [style]="{'width':'30%','padding':'3em 2em 2em'}">
-    <div class="title-sub-header">Customer Country</div>
+    <div class="title-sub-header" *ngIf="operationType === 'EDIT'">Edit customer country</div>
+    <div class="title-sub-header" *ngIf="operationType === 'VIEW'">View customer country selection</div>
 </p-sidebar>

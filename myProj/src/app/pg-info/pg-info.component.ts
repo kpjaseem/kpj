@@ -15,6 +15,7 @@ export class PgInfoComponent implements OnInit {
   golOption: any = [];
   spotPg = true;
   countrySidebar = false;
+  operationType!: string;
 
   constructor() { }
 
