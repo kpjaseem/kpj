@@ -1,4 +1,6 @@
+import { RepoService } from './../repo.service';
 import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import { TreeNode } from 'primeng/api';
 
 @Component({
   selector: 'app-pg-info',
@@ -16,20 +18,35 @@ export class PgInfoComponent implements OnInit {
   spotPg = true;
   countrySidebar = false;
   operationType!: string;
+  countryTree: TreeNode[] = [];
+  selectedCountry: TreeNode[] = [];
 
-  constructor() { }
+  constructor(private readonly repo: RepoService) { }
 
   ngOnInit(): void {
+    this.getTreeData();
     this.pgScopeOption = [
-      {zol: 'a', zod: 'A', isNeeded: true},
-      {zol: 'b', zod: 'B'},
-      {zol: 'c', zod: 'C'},
-      {zol: 'd', zod: 'D'},
+      {zol: 'HONG KONG SOUTH CHINA', zod: 'ECCA + CARIBBEAN', isNeeded: true},
+      {zol: 'HONG KONG SOUTH CHINA', zod: 'GUYANAS NORTH BRAZIL'},
+      {zol: 'HONG KONG SOUTH CHINA', zod: 'LEEWARD'},
+      {zol: 'HONG KONG SOUTH CHINA', zod: 'MEXICO EAST COAST'},
     ];
+  }
+  
+  golSuggestion() {
+    this.golOption = [];
     this.selectedPg?.gol.forEach((ele: any) => {
       const obj = { gol: ele };
       this.golOption.push(obj);
     })
+  }
+
+  getTreeData() {
+    this.repo.getCountryTree().subscribe({
+      next: (ele: any) => {
+        this.countryTree = ele;
+      }, error: () => null
+    });
   }
 
 }

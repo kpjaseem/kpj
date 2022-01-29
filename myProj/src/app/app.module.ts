@@ -18,6 +18,8 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {TableModule} from 'primeng/table';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {CalendarModule} from 'primeng/calendar';
+import {TreeModule} from 'primeng/tree';
+import {DividerModule} from 'primeng/divider';
 
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { printIcon } from 'src/assets/svg/pin';
@@ -35,6 +37,7 @@ import { PgAdminComponent } from './pg-admin/pg-admin.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { FooterComponent } from './footer/footer.component';
 import { PgInfoComponent } from './pg-info/pg-info.component';
+import { CommoditiesComponent } from './pg-admin/commodities/commodities.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import { PgInfoComponent } from './pg-info/pg-info.component';
     PgAdminComponent,
     BreadcrumbComponent,
     FooterComponent,
-    PgInfoComponent
+    PgInfoComponent,
+    CommoditiesComponent
   ],
   imports: [
     SvgIconsModule.forRoot({
@@ -73,7 +77,9 @@ import { PgInfoComponent } from './pg-info/pg-info.component';
     MultiSelectModule,
     TableModule,
     InputSwitchModule,
-    CalendarModule
+    CalendarModule,
+    TreeModule,
+    DividerModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

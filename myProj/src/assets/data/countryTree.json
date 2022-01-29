@@ -1,0 +1,48 @@
+[
+    {
+        "label": "Documents",
+        "data": "Documents Folder",
+        "children": [
+            {
+                "label": "Work",
+                "data": "Work Folder"
+            },
+            {
+                "label": "Home",
+                "data": "Home Folder"
+            }
+        ]
+    },
+    {
+        "label": "Pictures",
+        "data": "Pictures Folder",
+        "children": [
+            {
+                "label": "barcelona.jpg",
+                "data": "Barcelona Photo"
+            },
+            {
+                "label": "logo.jpg",
+                "data": "PrimeFaces Logo"
+            },
+            {
+                "label": "primeui.png",
+                "data": "PrimeUI Logo"
+            }
+        ]
+    },
+    {
+        "label": "Movies",
+        "data": "Movies Folder",
+        "children": [
+            {
+                "label": "Al Pacino",
+                "data": "Pacino Movies"
+            },
+            {
+                "label": "Robert De Niro",
+                "data": "De Niro Movies"
+            }
+        ]
+    }
+]

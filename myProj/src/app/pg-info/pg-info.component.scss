@@ -51,7 +51,7 @@
                 }
             }
         }
-        .countryBody {
+        .countryBody, .countrySidebar {
             .p-inputgroup input:first-child {
                 border-radius: 0;
                 border-right: none;
@@ -67,10 +67,16 @@
                 border-left: none;
                 color: var(--blue1);
             }
-            .p-inputgroup-addon.pencil {
+            .p-inputgroup-addon.pencil, .p-inputgroup-addon.search {
                 border-left: none;
                 border-radius: 0;
                 color: var(--blue1);
+            }
+        }
+        .countrySidebar  {
+            .p-tree .p-tree-container .p-treenode .p-treenode-content .p-checkbox {
+                right: 20px;
+                position: absolute;
             }
         }
     }

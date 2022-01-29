@@ -20,8 +20,8 @@
                 </p-dropdown>
             </div>
             <div class="col-4 golDrop">
-                <p-dropdown [options]="golOption" [(ngModel)]="gol" optionLabel="gol" placeholder="Group of lines"
-                    optionDisabled="gol"></p-dropdown>
+                <p-dropdown [options]="golOption" (onClick)="golSuggestion()" [(ngModel)]="gol" optionLabel="gol"
+                    placeholder="Group of lines" optionDisabled="gol"></p-dropdown>
             </div>
             <div class="col-4 spotPg">
                 <p-checkbox [(ngModel)]="spotPg" label="Spot PG" [binary]="selectedPg.spotFlag ? true : false"
@@ -37,8 +37,10 @@
                 <div class="mt-4">
                     <div class="p-inputgroup">
                         <input type="text" pInputText value="Commercial zone / Country" readonly>
-                        <span class="p-inputgroup-addon eye"><em class="pi pi-eye" (click)="countrySidebar = true;operationType = 'VIEW'"></em></span>
-                        <span class="p-inputgroup-addon pencil"><em class="pi pi-pencil" (click)="countrySidebar = true; operationType = 'EDIT'"></em></span>
+                        <span class="p-inputgroup-addon eye"><em class="pi pi-eye"
+                                (click)="countrySidebar = true;operationType = 'VIEW'"></em></span>
+                        <span class="p-inputgroup-addon pencil"><em class="pi pi-pencil"
+                                (click)="countrySidebar = true; operationType = 'EDIT'"></em></span>
                     </div>
                 </div>
             </div>
@@ -46,7 +48,18 @@
     </div>
 </div>
 
-<p-sidebar [(visible)]="countrySidebar" [baseZIndex]="3000" position="right" [style]="{'width':'30%','padding':'3em 2em 2em'}">
+<p-sidebar [(visible)]="countrySidebar" [baseZIndex]="3000" position="right"
+    [style]="{'width':'30%','padding':'3em 2em 2em'}">
     <div class="title-sub-header" *ngIf="operationType === 'EDIT'">Edit customer country</div>
     <div class="title-sub-header" *ngIf="operationType === 'VIEW'">View customer country selection</div>
+    <div class="mt-6">
+        <div class="countrySidebar">
+            <label>Commercial zone / Country</label>
+            <div class="p-inputgroup">
+                <input type="text" pInputText placeholder="Select your commercial zone  or country">
+                <span class="p-inputgroup-addon search"><em class="pi pi-search"></em></span>
+            </div>
+            <p-tree [value]="countryTree" selectionMode="checkbox" [(selection)]="selectedCountry"></p-tree>
+        </div>
+    </div>
 </p-sidebar>
