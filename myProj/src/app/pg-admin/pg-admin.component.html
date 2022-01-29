@@ -8,7 +8,7 @@
     <div class="grid">
         <div class="col-3">
             <p-dropdown [options]="assignedPgs" [(ngModel)]="selectedPg" optionLabel="name"
-                (onClick)="getGopArray(selectedPg.pgId)"></p-dropdown>
+                (onClick)="getGopArray(selectedPg.pgId)" (onClick)="changeCommodity()"></p-dropdown>
         </div>
         <div class="ml-4"></div>
         <div class="dot"></div>
@@ -81,7 +81,7 @@
             <app-pg-info [selectedPg]="selectedPg"></app-pg-info>
         </div>
         <div *ngIf="isTabOpen[2]">
-            Commodities
+            <app-commodities [selectedPg]="selectedPg"></app-commodities>
         </div>
     </div>
 </div>

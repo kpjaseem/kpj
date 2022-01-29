@@ -1,0 +1,79 @@
+<div class="commodities">
+    <div class="grid header">
+        <div class="h1">GROUP OF COMMODITIES</div>
+        <div class="history" (click)="openHistory()">History&nbsp;<em class="pi pi-book"></em></div>
+    </div>
+    <div class="grid mt-3 commd" [ngClass]="{'commod1': pgAdminCommodities.length > 20 }">
+        <div class="col-3" *ngFor="let commodity of pgAdminCommodities">
+            <div class="p-inputgroup">
+                <input type="text" pInputText [ngClass]="{'blurText': commodity?.deletedFlag }"
+                    [pTooltip]="commodity?.commodityName.toUpperCase()" tooltipPosition="top"
+                    [value]="commodity?.commodityName.toUpperCase()">
+                <span class="p-inputgroup-addon deleted" *ngIf="commodity?.deletedFlag">Deleted</span>
+                <span class="p-inputgroup-addon pencil" *ngIf="!commodity?.deletedFlag"><em
+                        class="pi pi-pencil"></em></span>
+                <span class="p-inputgroup-addon pencil" [ngClass]="{'blurColor': commodity?.deletedFlag }"><em
+                        class="pi pi-eye"></em></span>
+                <span class="p-inputgroup-addon chevronDown" *ngIf="commodity?.subCommodity"
+                    [ngClass]="[commodity?.deletedFlag ? 'blurColor' : '']"><em class="pi pi-chevron-down"
+                        [pTooltip]="assignChevronDownTooltip(commodity?.subCommodity).toUpperCase()"
+                        tooltipPosition="bottom"></em></span>
+            </div>
+        </div>
+    </div>
+    <p-divider></p-divider>
+    <div class="btnContainer" style="text-align: right;">
+        <button pButton label="Create new group" class="createBtn" (click)="isCommodityOpen = true"></button>
+        <button pButton label="Cancel" class="cancelBtn" [routerLink]="['/home']"></button>
+    </div>
+</div>
+
+<p-sidebar [(visible)]="isHistoryOpen" [baseZIndex]="3000" position="right" [style]="{'width': '40%'}">
+    <div style="padding: 3em 1em 3em 3em;">
+        <div class="title-sub-header">Group of commodities history</div>
+        <div class="mt-3" style="height: 32em;overflow-y: scroll;">
+            <div *ngFor="let item of history">
+                <p-divider></p-divider>
+                {{item.content}}
+            </div>
+        </div>
+        <p-divider></p-divider>
+        <div style="text-align: right;">
+            <button pButton label="Cancel" (click)="isHistoryOpen = false"
+                style="background-color: var(--white);color: var(--red);border-color: var(--red);margin-top: 1em;"></button>
+        </div>
+    </div>
+</p-sidebar>
+
+
+<p-sidebar [(visible)]="isCommodityOpen" [baseZIndex]="3000" position="right" [style]="{'width': '60%'}">
+    <div style="padding: 3em 1em 3em 3em;">
+        <div class="title-header">New group of commodities</div>
+        <div class="grid mt-4 mb-4" style="justify-content: space-between;">
+            <div class="col-5">
+                <label>Group name / Short description</label>
+                <input type="text" pInputText placeholder="Type new name and description">
+            </div>
+            <div class="col-5">
+                <label>Long description</label>
+                <input type="text" pInputText placeholder="Type long description">
+            </div>
+        </div>
+        <p-divider></p-divider>
+        <div class="mt-4">
+            <label>Add new commodity</label>
+            <div>
+                <div class="p-inputgroup" style="z-index: 2;position: absolute;width: 93%;">
+                    <input type="text" pInputText placeholder="Search for a commodity" style="border-radius: 0;border-right: none;">
+                    <em class="pi pi-search p-inputgroup-addon" style="background-color: var(--white);margin-left: none;border-radius: 0;border-color: black;"></em>
+                </div>
+                <p-multiSelect [options]="commodityMultiSelectSuggestion" [(ngModel)]="selectedCommodities" [showHeader]="false" [style]="{'position':'relative','z-index':'-1','width': '100%'}" dropdownIcon="pi pi-search"></p-multiSelect>
+            </div>
+        </div>
+        <p-divider></p-divider>
+        <div style="text-align: right;">
+            <button pButton label="Cancel" (click)="isCommodityOpen = false"
+                style="background-color: var(--white);color: var(--red);border-color: var(--red);margin-top: 1em;"></button>
+        </div>
+    </div>
+</p-sidebar>

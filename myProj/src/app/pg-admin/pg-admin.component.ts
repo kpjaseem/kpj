@@ -51,7 +51,7 @@ export class PgAdminComponent implements OnInit {
       { pgId: 11418, name: 'ACSA (UPA)TEST', spotFlag: false, gol: ['FAL', 'CIMEX'] },
       { pgId: 11448, name: 'BALTIC EXPORT HO (UPA)TEST', spotFlag: true, gol: ['FAL', 'CIMEX'] },
       { pgId: 11596, name: 'MRS ASIA TO CARIB/MANAUS-ALL', spotFlag: true, gol: ['FAL', 'CIMEX'] },
-      { pgId: 11665, name: 'MRS-NEUR TO ASIA-ALL', spotFlag: false, gol: ['FAL', 'CIMEX'] }
+      { pgId: 11665, name: 'MRS-NEUR TO ASIA-ALL', spotFlag: false, gol: ['MEX', 'FAL'] }
     ];
     this.getGopArray(this.selectedPg.pgId);
   }
@@ -129,6 +129,10 @@ export class PgAdminComponent implements OnInit {
     this.gopSidebar = false;
     this.toast.clear('pgAdmin');
     this.toast.add({key: 'pgAdmin',severity: 'info', summary: `GOP ${this.gopName} created`})
+  }
+
+  changeCommodity() {
+    this.repo.changeCommodity.next(true);
   }
 
 }
